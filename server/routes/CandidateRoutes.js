@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { jwtAuthMiddleware } from "../middleware/AuthMiddelware";
+import { jwtAuthMiddleware } from "../middleware/AuthMiddelware.js";
 import { addCandidate, updateCandidate, deleteCandidate, voteToCandidate, voteCount, fetchCandidates } from "../controllers/Candidatecontrollers.js";
 
 
