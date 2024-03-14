@@ -15,9 +15,7 @@ const checkAdminRole = async (userID) => {
 const addCandidate = async (req, res) => {
   try {
     if (!(await checkAdminRole(req.user.id)))
-      return res
-        .status(403)
-        .json({ success: false, msg: "user has not admin role" });
+      return res.status(403).json({ success: false, msg: "user has not admin role" });
 
     const data = req.body;
 
