@@ -18,8 +18,8 @@ app.use(express.json())
 app.use(bodyParser.json())
 
 //Routes
-app.use('/users',userRouter)
-app.use('/candidate',candidateRouter)
+app.use('/api/v1/users',userRouter)
+app.use('/api/v1/candidate',candidateRouter)
 
 app.listen(port, () => {
     console.log(`server is running on port: ${port}`);

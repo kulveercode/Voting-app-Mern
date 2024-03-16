@@ -21,6 +21,7 @@ const signupUser = async (req, res) => {
     res.status(500).json({ success: false, msg: "Internal Server Error" });
   }
 };
+
 const loginUser = async (req, res) => {
   try {
     const { aadharCardNumber, password, role } = req.body;

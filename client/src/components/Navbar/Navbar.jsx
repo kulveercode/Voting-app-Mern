@@ -1,24 +1,34 @@
-import React from 'react';
-import './Navbar.css';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import "./Navbar.css";
+import { NavLink } from "react-router-dom";
+import { useAuth } from "../../store/Auth";
+
 
 function Navbar() {
-  return (
-    <div className='navbar'>
-      <div className="navbar-brand">
+  const isLoggedIn = useAuth()
+  
+return (
+<div className='navbar'>
+  <div className="navbar-brand">
         <h2>Voting App</h2>
-      </div>
+  </div>
 
-      <div className='navbar-links'>
-        <NavLink to='/'>Home</NavLink>
-        <button>Logout</button>
-        <button>Result</button>
-      </div>
-      <button>Register</button>
-    </div>
-  )
+  <div className='navbar-links' >
+     <NavLink to="/">Home</NavLink>
+     {isLoggedIn ? (
+        <>
+        <NavLink to="/logout"><button>Logout</button></NavLink>
+        <NavLink to="/result"><button>Result</button></NavLink>
+        </>
+     ):(
+        <>
+          <NavLink to="/register"><button>Register</button></NavLink> 
+        </>
+     )
+   }
+  </div>
+</div>
+)
 }
 
 export default Navbar;
-
-
