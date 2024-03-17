@@ -3,7 +3,7 @@ import "./Registration.css";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../store/Auth";
 import { toast } from "react-toastify";
-// import { BASE_URL } from "../../service";
+import { BASE_URL } from "../../service";
 
 const Registration = () => {
   const navigate = useNavigate();
@@ -24,7 +24,7 @@ const Registration = () => {
 
   const register = async () => {
     let responseData;
-    await fetch("http://localhost:4000/api/v1/users/signup", {
+    await fetch(`${BASE_URL}/api/v1/users/signup`, {
       method: "POST",
       headers: {
         Accepts: "application/form-data",
